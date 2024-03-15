@@ -1,0 +1,1 @@
+crie um script dart com variaveis int e mostre seu dobro, triplo e raiz quadrada

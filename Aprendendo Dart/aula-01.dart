@@ -14,15 +14,18 @@ void main(){
   // Variavel de Texto
   String texto = "Olá Mundo";
 
-  // Variavel que aceita qualquer valor dos demais tipos, é um tipo de variavel auto adaptavel
+  // Variavel que aceita qualquer valor dos demais tipos, mas se ela for de um tipo por exemplo Sring como no exemplo abaixo ela não vai mudar para outro tipo
   var QualquerTipo = "Eu mudo bastante";
 
   // Temos outra variavel que não muda seu valor e ela é o const, qualquer valor que esteja dentro da variavel nunca mudara
   const NuncaMudarei = 10 ;
 
-  // Vamos mostrar o valor dessas variaveis no terminal ?
+  // Variavel que aceita qualquer valor dos demais tipos, é um tipo de variavel auto adaptavel
+  dynamic valorAleatorio = true;
 
-  print("/************************************** Print dos valores das variaveis *********************************************/");
+
+  print("/************************************** Print dos valores das variaveis e seus tipos *********************************************/");
+  // Vamos mostrar o valor dessas variaveis no terminal ?
   print(NumerosInteiros);
   print(NumerosReais);
   print(verdadeiro);
@@ -30,6 +33,19 @@ void main(){
   print(texto);
   print(QualquerTipo);
   print(NuncaMudarei);
+  print("/*********************************************************************************************************************/");
+  print(NumerosInteiros.runtimeType);
+  print(NumerosReais.runtimeType);
+  print(verdadeiro.runtimeType);
+  print(falso.runtimeType);
+  print(texto.runtimeType);
+  print(QualquerTipo.runtimeType);
+  //QualquerTipo = 10; // Apague as primeiras "//" para visualizar o erro
+  print(valorAleatorio.runtimeType);
+  valorAleatorio = 10 ;
+  print(valorAleatorio.runtimeType);
+  valorAleatorio = 11.5;
+  print(valorAleatorio.runtimeType);
   print("/*********************************************************************************************************************/");
 
   print("/************************************************ Interpolação *******************************************************/");
@@ -109,7 +125,7 @@ void main(){
   // .toLowerCase() deixa todos os caracteres de uma String minusculos
   print(f.toLowerCase());
   
-  print("/*********************************************************************************************************************/");
+print("/*********************************************************************************************************************/");
  
   print("/************************************ listas, conjutos e mapas ******************************************************/"); 
 
@@ -124,6 +140,7 @@ void main(){
   print(lista[1]);
   print(lista[2]);
 
+  print("/*********************************************************************************************************************/");
   //adicionando valor dentro da lista
   lista.add("Quatro");
   lista.add(5);
@@ -131,10 +148,11 @@ void main(){
 
   print(lista);
   
+  print("/*********************************************************************************************************************/");
   // Vamos criar uma lista com os valores inteiros e tentando adicionar outro valores 
   // para declarar o tipo da lista a expressao é um pouco diferente em dart
-  List<int> numeros = [1, 2, 3];
-  print(numeros);
+  List<int> numeros1 = [1, 2, 3];
+  print(numeros1);
 
   //vamos tentar colocar uma string dentro da lista
   //numeros.add("Olá Mundo");   // Apague as primeiras "//" para visualizar o erro
@@ -144,6 +162,25 @@ void main(){
 
   //vamos tentar colocar uma Bool dentro da lista
   //numeros.add(true);   // Apague as primeiras "//" para visualizar o erro
-
   
+  print("/*********************************************************************************************************************/");
+  // os conjuntos são parecidos com as listas, mas se um valor for repetido dentro do conjunto o segundo valor iguala vai ser ignorado
+
+  Set<int> conjunto = {1, 2 ,3 , 2};
+
+  //vamos ver o tamanho da lista, retorna um valor inteiro
+  print(conjunto.length);
+
+  // para retorna o valor de cada posição dentro do conjunto precisamos atribuir ele dentro de uma variavel e para isso usaremos o metodo .elementAt(posição do valor)
+  var conjunto1 = conjunto.elementAt(0);
+  print(conjunto1);
+  var conjunto2 = conjunto.elementAt(1);
+  print(conjunto2);
+  var conjunto3 = conjunto.elementAt(2);
+  print(conjunto3);
+
+  // aqui podemos ver um exemplo de como o conjunto se comporta, dentro de uma lista o valores iguais são impressos normalmente, mas como aqui é um conjunto ele ignora pois é um numero repetido e não vai imprimir nada
+  //var conjunto4 = conjunto.elementAt(3);
+  //print(conjunto4);
+
 }
